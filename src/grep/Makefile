@@ -26,9 +26,9 @@ tests:
 	diff <(./s21_grep -e qwe $(FILE)) <(grep -e qwe $(FILE))
 	diff <(./s21_grep -s unfind $(FILE)) <(grep -s unfind $(FILE))
 	diff <(./s21_grep -f $(REG_FILE) $(FILE)) <(grep -f $(REG_FILE) $(FILE))
-	diff <(./s21_grep -oi he $(FILE)) <(grep -oi he $(FILE))
+	diff <(./s21_grep -oi qw $(FILE)) <(grep -oi qw $(FILE))
 	diff <(./s21_grep -ohf $(REG_FILE) $(FILE)) <(grep -ohf $(REG_FILE) $(FILE))
-	diff <(./s21_grep -oinc he $(FILE)) <(grep -oinc he $(FILE))
+	diff <(./s21_grep -oinc qw $(FILE)) <(grep -oinc qw $(FILE))
 	diff <(./s21_grep -oihlnc -e XC -e ZX -f $(REG_FILE) $(FILE)) <(grep -oihlnc -e XC -e ZX -f $(REG_FILE) $(FILE))
 
 	$(CHECK) ./s21_grep qwe $(FILE)
@@ -43,9 +43,9 @@ tests:
 	$(CHECK) ./s21_grep -e qwe $(FILE)
 	$(CHECK) ./s21_grep -s unfind $(FILE)
 	$(CHECK) ./s21_grep -f $(REG_FILE) $(FILE)
-	$(CHECK) ./s21_grep -oi as $(FILE)
+	$(CHECK) ./s21_grep -oi qw $(FILE)
 	$(CHECK) ./s21_grep -ohf $(REG_FILE) $(FILE)
-	$(CHECK) ./s21_grep -oinc as $(FILE)
+	$(CHECK) ./s21_grep -oinc qw $(FILE)
 	$(CHECK) ./s21_grep -oihlnc -e XC -e ZX -f $(REG_FILE) $(FILE)
 clean:
 	rm -rf *.o s21_grep .clang-format
